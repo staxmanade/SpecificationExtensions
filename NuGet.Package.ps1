@@ -30,18 +30,25 @@ function Increment-Version($version){
     [System.String]::Join(".", $parts)
 }
 
-$packageIds = @(
-	@{},
-	@{}
-)
-$packageIds[0].Name = "Xunit"
-$packageIds[0].PackageId = "SpecificationExtensions.Xunit"
-$packageIds[0].SpecFile = (get-item ".\Xunit\xUnitSpecificationExtensions.cs")
+$packageIds = @()
 
-$packageIds[1].Name = "NUnit"
-$packageIds[1].PackageId = "SpecificationExtensions.NUnit"
-$packageIds[1].SpecFile = (get-item ".\NUnit\NUnitSpecificationExtensions.cs")
+$package = @{};
+	$package.Name = "Xunit"
+	$package.PackageId = "SpecificationExtensions.Xunit"
+	$package.SpecFile = (get-item ".\Xunit\xUnitSpecificationExtensions.cs")
+$packageIds += $package;
 
+$package = @{};
+	$package.Name = "NUnit"
+	$package.PackageId = "SpecificationExtensions.NUnit"
+	$package.SpecFile = (get-item ".\NUnit\NUnitSpecificationExtensions.cs")
+$packageIds += $package;
+
+$package = @{};
+	$package.Name = "MSTest"
+	$package.PackageId = "SpecificationExtensions.MSTest"
+	$package.SpecFile = (get-item ".\MSTest\MSTestSpecificationExtensions.cs")
+$packageIds += $package;
 
 
 $baseNuSpecFile = (get-item .\SpecificationExtensions.Base.nuspec)

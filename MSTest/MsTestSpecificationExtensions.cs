@@ -16,7 +16,7 @@ public static class MsTestSpecificationExtensions
         Assert.IsTrue(condition, message);
     }
 
-    public static T ShouldEqual<T>(this T actual, T expected, string message = "") where T : class
+    public static T ShouldEqual<T>(this T actual, T expected, string message = "")
     {
         if (actual == null)
         {

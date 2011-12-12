@@ -69,7 +69,12 @@ public static class MsTestSpecificationExtensions
 
     public static T ShouldNotBeNull<T>(this T anObject)
     {
-        Assert.IsNotNull(anObject);
+        return ShouldNotBeNull(anObject, string.Empty);
+    }
+
+    public static T ShouldNotBeNull<T>(this T anObject, string message)
+    {
+        Assert.IsNotNull(anObject, message);
         return anObject;
     }
 

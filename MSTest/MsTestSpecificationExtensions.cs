@@ -267,13 +267,13 @@ public static class MsTestSpecificationExtensions
 
     public static string ShouldStartWith(this string actual, string expected)
     {
-        StringAssert.StartsWith(expected, actual);
+        StringAssert.StartsWith(actual, expected);
         return actual;
     }
 
     public static string ShouldEndWith(this string actual, string expected)
     {
-        StringAssert.EndsWith(expected, actual);
+        StringAssert.EndsWith(actual, expected);
         return actual;
     }
 
